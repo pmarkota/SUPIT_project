@@ -69,12 +69,15 @@ function checkLoggedIn() {
     $("#login-navbar").hide();
     $("#register-navbar").hide();
     $("#logout-navbar").show();
+    $("#curriculum-item").show();
   } else {
     $("#login-navbar").show();
     $("#register-navbar").show();
     $("#logout-navbar").hide();
+    $("#curriculum-item").hide();
   }
 }
+
 const contactButton = document.getElementById("contact-button");
 
 function ShowContactMenu() {

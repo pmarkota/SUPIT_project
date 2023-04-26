@@ -206,10 +206,12 @@ $(document).ready(function () {
     sessionStorage.removeItem("username");
     sessionStorage.removeItem("token");
 
-    $(".curriculum").css("display", "none");
+    //$(".curriculum").css("display", "none");
 
     // Remove the logout button from the navbar
     $("#logout-button").remove();
+
+    checkLoggedIn();
     // Add the login and register buttons back to the navbar
     $("#menu").append(
       '<li class="nav-item right-nav-item login-navbar"><button id="login-button">Login</button></li>'
