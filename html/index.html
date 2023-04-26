@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Petar Markota</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <img
+        src="/img/burger-menu.png"
+        alt="burger-icon"
+        class="burger-icon"
+        width="75"
+        onclick="toggleMenu()"
+        onmousedown="changeLight()"
+        onmouseup="changeDark()"
+      /><a href=""
+        ><img src="/img/LOGO.png" alt="PMlogo" class="logo" width="250px"
+      /></a>
+
+      <ul id="menu">
+        <li class="nav-item nav-home"><a href="/html/index.html">Home</a></li>
+        <li class="nav-item"><a href="">About us</a></li>
+        <li class="nav-item"><a href="">News</a></li>
+        <li class="nav-item">
+          <a
+            href="curriculum.html"
+            class="curriculum curriculum-item"
+            style="display: none"
+            >Curriculum</a
+          >
+        </li>
+        <li class="nav-item nav-contact" onclick="showContactForm()">
+          Contact
+        </li>
+
+        <li class="nav-item right-nav-item login-navbar">
+          <button id="login-button">Login</button>
+        </li>
+        <li class="nav-item signup-navbar">
+          <button id="register-button" class="logs">Register</button>
+        </li>
+      </ul>
+    </nav>
+    <div id="overlay"></div>
+
+    <div id="login-form" style="display: none">
+      <h2>Login</h2>
+      <form class="log-form">
+        <div>
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            style="background-color: #eeeeee; border: none; padding: 8px"
+          />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            style="background-color: #eeeeee; border: none; padding: 8px"
+          />
+        </div>
+        <button
+          type="submit"
+          style="
+            background-color: #00adb5;
+            color: #fff;
+            border: none;
+            padding: 8px;
+          "
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+
+    <div id="register-form" class="form" style="display: none">
+      <h2>Register</h2>
+      <form class="reg-form">
+        <div class="ipf">
+          <label for="reg-username">Username</label>
+          <input type="text" id="reg-username" name="reg-username" required />
+        </div>
+        <div class="ipf">
+          <label for="reg-password">Password</label>
+          <input
+            type="password"
+            id="reg-password"
+            name="reg-password"
+            required
+          />
+        </div>
+        <!-- <div class="ipf">
+      <label for="password-repeat">Repeat Password</label>
+      <input type="password" id="password-repeat" name="password-repeat" required>
+    </div> -->
+        <div class="buttons">
+          <button type="cancel" class="button cancel">Cancel</button>
+          <button type="submit" class="button register">Register</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="message-box"></div>
+
+    <script src="/js/navbar.js"></script>
+    <script src="/js/logsig.js"></script>
+    <script src="/js/curriculum.js"></script>
+  </body>
+</html>

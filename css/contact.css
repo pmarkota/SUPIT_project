@@ -1,0 +1,60 @@
+:root {
+  --four: #222831;
+  --three: #393E46;
+  --two: #00ADB5;
+  --one: #EEEEEE;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--four);
+}
+
+#contact-form-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.contact-form {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  background-color: var(--three);
+  color: var(--one);
+  font-size: 18px;
+  border-radius: 1.2rem;
+}
+.contact-form .form-part {
+  padding-top: 10px;
+}
+.contact-form #name {
+  font-size: 18px;
+}
+.contact-form #email {
+  font-size: 18px;
+}
+.contact-form #importance {
+  font-size: 18px;
+}
+.contact-form #importance .highest-importance {
+  color: var(--two);
+  font-weight: 600;
+}
+.contact-form .form-input {
+  padding: 0px 3px;
+}
+.contact-form #message {
+  padding: 7px 7px;
+  resize: none;
+  font-size: 18px;
+}/*# sourceMappingURL=contact.css.map */
