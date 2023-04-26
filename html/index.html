@@ -8,7 +8,7 @@
     <title>Petar Markota</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
-  <body>
+  <body onload="checkLoggedIn()">
     <nav class="navbar">
       <img
         src="/img/burger-menu.png"
@@ -38,11 +38,14 @@
           Contact
         </li>
 
-        <li class="nav-item right-nav-item login-navbar">
+        <li class="nav-item right-nav-item login-navbar" id="login-navbar">
           <button id="login-button">Login</button>
         </li>
-        <li class="nav-item signup-navbar">
+        <li class="nav-item signup-navbar" id="register-navbar">
           <button id="register-button" class="logs">Register</button>
+        </li>
+        <li class="logout-navbar" id="logout-navbar">
+          <a href="index.html" id="logout-button">Log out</a>
         </li>
       </ul>
     </nav>
@@ -117,3 +120,5 @@
     <script src="/js/curriculum.js"></script>
   </body>
 </html>
+
+<script></script>

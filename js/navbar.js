@@ -64,6 +64,17 @@ function changeDark() {
   burger.style.backgroundColor = "#222831";
 }
 
+function checkLoggedIn() {
+  if (sessionStorage.getItem("token") != null) {
+    $("#login-navbar").hide();
+    $("#register-navbar").hide();
+    $("#logout-navbar").show();
+  } else {
+    $("#login-navbar").show();
+    $("#register-navbar").show();
+    $("#logout-navbar").hide();
+  }
+}
 const contactButton = document.getElementById("contact-button");
 
 function ShowContactMenu() {

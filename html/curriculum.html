@@ -31,7 +31,7 @@
           <a
             href="curriculum.html"
             class="curriculum curriculum-item"
-            style="display: none"
+            style="display: block"
             >Curriculum</a
           >
         </li>
@@ -117,7 +117,6 @@
         <th>Exercises</th>
         <th>Type</th>
         <th>Semestar</th>
-
       </thead>
     </table>
 
@@ -131,18 +130,18 @@
 
 <script>
   let div = document.getElementById("content");
-  function load(){
-    let data =  null;
-  fetch('https://www.fulek.com/data/api/supit/curriculum-list/en', {
-  headers: {Authorization: 'Bearer ' + sessionStorage.getItem('token')}
-})
-   .then(resp => resp.json())
-   .then(json => log(json))
-   .catch( error => console.error(error));
-   console.log(data);
+  function load() {
+    let data = null;
+    fetch("https://www.fulek.com/data/api/supit/curriculum-list/en", {
+      headers: { Authorization: "Bearer " + sessionStorage.getItem("token") },
+    })
+      .then((resp) => resp.json())
+      .then((json) => log(json))
+      .catch((error) => console.error(error));
+    console.log(data);
   }
 
-  function log(data){
+  function log(data) {
     console.log(data);
     data = data.data;
     console.log(data);
@@ -156,8 +155,7 @@
           <td>${subject.exercises}</td>
           <td>${subject.type}</td>
           <td>${subject.semester}</td>
-        </tr>`
-});
-    
+        </tr>`;
+    });
   }
 </script>
