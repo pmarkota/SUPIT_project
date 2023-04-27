@@ -86,3 +86,21 @@ function ShowContactMenu() {
       ? "none"
       : "block";
 }
+$(window).scroll(function () {
+  if ($(this).scrollTop() > $(".navbar").height()) {
+    $("#sidebar").fadeIn();
+  } else {
+    $("#sidebar").fadeOut();
+  }
+});
+
+$("#sidebar ul li a").click(function (e) {
+  e.preventDefault();
+  var target = $(this).attr("href");
+  $("html, body").animate(
+    {
+      scrollTop: $(target).offset().top - 100,
+    },
+    1000
+  );
+});

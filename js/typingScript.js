@@ -1,11 +1,10 @@
 const typingText = document.getElementById("typing-text");
 
 const messages = [
-  "Hello, world!",
-  "I'm typing...",
-  "This is a typing effect",
-  "It's done using HTML, CSS, and JavaScript",
-  "Hope you like it!",
+  "This is my project.",
+  "It's a website for my portfolio.",
+  "It's made using Bootstrap and jQuery.",
+  "I hope you like it!",
 ];
 
 let currentMessage = 0;

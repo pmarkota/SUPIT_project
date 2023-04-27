@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap");
 $breakpoint: 600px;
 $bigscreen: 601px;
 :root {
@@ -94,6 +94,9 @@ body {
       top: -85px;
     }
     #menu {
+      #login-navbar {
+        padding-left: 10px;
+      }
       flex-direction: column;
       align-items: flex-start;
       .logs {
@@ -441,5 +444,306 @@ body {
   }
   to {
     width: 100%;
+  }
+}
+
+//!SIDEBAR
+#sidebar {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 150px;
+  background-color: var(--three);
+  padding: 20px;
+  display: none;
+  border-bottom-right-radius: 1rem;
+  border-top-right-radius: 1rem;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 10px 0;
+
+      a {
+        font-weight: 500;
+        font-size: 1.1rem;
+        color: var(--one);
+        text-decoration: none;
+
+        &:hover {
+          color: var(--two);
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+}
+
+//! About Us
+//! THESE -text Classes could have all been 1 class but I made more of them in case I wanted to make modifications to each section's styling individually in the future without affecting the others.I  chose to do it this way. I could have also used the same class for all of them and used the :nth-child() selector to style them individually. I chose to do it this way because I haven't yet mastered using the :nth-child() selector. I will master it soon though. I promise.
+.campus-image-container {
+  .campus-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+}
+//? Values
+.section-our-values {
+  background-color: #ffffff;
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 40px;
+    font-weight: 700;
+    font-size: 2.3rem;
+    color: var(--three);
+  }
+  hr {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+    height: 5px;
+    background-color: grey;
+    border: none;
+    border-radius: 2rem;
+  }
+  h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: var(--two);
+  }
+}
+.section-about-text {
+  background-color: rgb(244, 244, 244);
+  padding: 50px;
+  padding-bottom: 30px;
+  margin-top: 50px;
+  text-align: left;
+  font-size: 1.17rem;
+  color: var(--three);
+  p {
+    font-family: "Kalam", cursive;
+
+    padding: 40px;
+    margin: 0 120px;
+  }
+}
+.section-cards {
+  text-align: center;
+  padding: 40px 0px 40px 0px;
+  .card {
+    display: inline-block;
+    background-color: #fff;
+    border: 2px solid var(--three);
+    border-radius: 5px;
+    padding: 20px;
+    height: 400px;
+    margin-bottom: 20px;
+    width: 30%;
+    h3 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    hr {
+      border-color: #ccc;
+      margin: 15px 0;
+    }
+
+    p {
+      text-align: justify;
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+  }
+}
+//?History
+.section-history {
+  background-color: #ffffff;
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 40px;
+    font-weight: 700;
+    font-size: 2.3rem;
+    color: var(--three);
+  }
+}
+.section-history-text {
+  background-color: rgb(244, 244, 244);
+  padding: 50px;
+  padding-bottom: 30px;
+  margin-top: 50px;
+  text-align: left;
+  font-size: 1.17rem;
+  color: var(--three);
+  p {
+    font-family: "Kalam", cursive;
+
+    padding: 40px;
+    margin: 0 120px;
+  }
+}
+.section-cards-history {
+  text-align: center;
+  padding: 40px 0px 40px 0px;
+
+  .card {
+    display: inline-block;
+    background-color: #fff;
+    border: 2px solid var(--three);
+    border-radius: 5px;
+    padding: 20px;
+    height: 430px;
+    margin-bottom: 20px;
+    width: 30%;
+    vertical-align: top; //!IMPORTANT This aligns the cards top sieds
+    span {
+      color: var(--two);
+      font-weight: 700;
+    }
+    h3 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    hr {
+      border-color: #ccc;
+      margin: 15px 0;
+    }
+
+    p {
+      text-align: justify;
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+  }
+}
+//? Algebras group
+.section-algebra-group {
+  background-color: #ffffff;
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 40px;
+    font-weight: 700;
+    font-size: 2.3rem;
+    color: var(--three);
+  }
+}
+.section-algebra-group-text {
+  background-color: rgb(244, 244, 244);
+  padding: 50px;
+  padding-bottom: 30px;
+  margin-top: 50px;
+  text-align: left;
+  font-size: 1.17rem;
+  color: var(--three);
+  p {
+    font-family: "Kalam", cursive;
+
+    padding: 40px;
+    margin: 0 120px;
+  }
+}
+//? Technologies
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+  margin-bottom: 80px;
+  vertical-align: top;
+  margin-top: 40px;
+
+  .technology {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(25% - 20px);
+
+    margin: 0 10px;
+    text-align: center;
+    h1 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-align: justify;
+      color: var(--three);
+    }
+    img {
+      padding-top: 15px;
+    }
+  }
+}
+//? Reach Us
+.section-reach-us {
+  background-color: #ffffff;
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 40px;
+    font-weight: 700;
+    font-size: 2.3rem;
+    color: var(--three);
+  }
+}
+.location {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f7f7f7;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 50px;
+
+  .location-card {
+    width: 45%;
+    background-color: #fff;
+    border: 2px solid var(--three);
+    border-radius: 5px;
+    padding: 20px;
+    height: 400px;
+    margin-bottom: 20px;
+
+    h1 {
+      font-weight: 600;
+      font-size: 2rem;
+      color: var(--two);
+    }
+    hr {
+      border-color: #ccc;
+      margin: 15px 0;
+    }
+    p {
+      font-weight: 500;
+      padding-left: 35px;
+    }
+  }
+
+  .google-map {
+    margin-top: 50px;
   }
 }

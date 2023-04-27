@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap");
 :root {
   --four: #222831;
   --three: #393e46;
@@ -90,6 +91,9 @@ body {
   .navbar #menu {
     flex-direction: column;
     align-items: flex-start;
+  }
+  .navbar #menu #login-navbar {
+    padding-left: 10px;
   }
   .navbar #menu .logs {
     margin-left: 10px;
@@ -404,4 +408,288 @@ body {
   to {
     width: 100%;
   }
+}
+#sidebar {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 150px;
+  background-color: var(--three);
+  padding: 20px;
+  display: none;
+  border-bottom-right-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+#sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#sidebar ul li {
+  margin: 10px 0;
+}
+#sidebar ul li a {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--one);
+  text-decoration: none;
+}
+#sidebar ul li a:hover {
+  color: var(--two);
+}
+@media screen and (min-width: 768px) {
+  #sidebar {
+    display: block;
+  }
+}
+
+.campus-image-container .campus-image {
+  width: 100%;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.section-our-values {
+  background-color: #ffffff;
+}
+.section-our-values h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 40px;
+  font-weight: 700;
+  font-size: 2.3rem;
+  color: var(--three);
+}
+.section-our-values hr {
+  width: 50%;
+  margin: auto;
+  margin-bottom: 20px;
+  height: 5px;
+  background-color: grey;
+  border: none;
+  border-radius: 2rem;
+}
+.section-our-values h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: var(--two);
+}
+
+.section-about-text {
+  background-color: rgb(244, 244, 244);
+  padding: 50px;
+  padding-bottom: 30px;
+  margin-top: 50px;
+  text-align: left;
+  font-size: 1.17rem;
+  color: var(--three);
+}
+.section-about-text p {
+  font-family: "Kalam", cursive;
+  padding: 40px;
+  margin: 0 120px;
+}
+
+.section-cards {
+  text-align: center;
+  padding: 40px 0px 40px 0px;
+}
+.section-cards .card {
+  display: inline-block;
+  background-color: #fff;
+  border: 2px solid var(--three);
+  border-radius: 5px;
+  padding: 20px;
+  height: 400px;
+  margin-bottom: 20px;
+  width: 30%;
+}
+.section-cards .card h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.section-cards .card hr {
+  border-color: #ccc;
+  margin: 15px 0;
+}
+.section-cards .card p {
+  text-align: justify;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+.section-cards .card:hover {
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.section-history {
+  background-color: #ffffff;
+}
+.section-history h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 40px;
+  font-weight: 700;
+  font-size: 2.3rem;
+  color: var(--three);
+}
+
+.section-history-text {
+  background-color: rgb(244, 244, 244);
+  padding: 50px;
+  padding-bottom: 30px;
+  margin-top: 50px;
+  text-align: left;
+  font-size: 1.17rem;
+  color: var(--three);
+}
+.section-history-text p {
+  font-family: "Kalam", cursive;
+  padding: 40px;
+  margin: 0 120px;
+}
+
+.section-cards-history {
+  text-align: center;
+  padding: 40px 0px 40px 0px;
+}
+.section-cards-history .card {
+  display: inline-block;
+  background-color: #fff;
+  border: 2px solid var(--three);
+  border-radius: 5px;
+  padding: 20px;
+  height: 430px;
+  margin-bottom: 20px;
+  width: 30%;
+  vertical-align: top;
+}
+.section-cards-history .card span {
+  color: var(--two);
+  font-weight: 700;
+}
+.section-cards-history .card h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.section-cards-history .card hr {
+  border-color: #ccc;
+  margin: 15px 0;
+}
+.section-cards-history .card p {
+  text-align: justify;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+.section-cards-history .card:hover {
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.section-algebra-group {
+  background-color: #ffffff;
+}
+.section-algebra-group h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 40px;
+  font-weight: 700;
+  font-size: 2.3rem;
+  color: var(--three);
+}
+
+.section-algebra-group-text {
+  background-color: rgb(244, 244, 244);
+  padding: 50px;
+  padding-bottom: 30px;
+  margin-top: 50px;
+  text-align: left;
+  font-size: 1.17rem;
+  color: var(--three);
+}
+.section-algebra-group-text p {
+  font-family: "Kalam", cursive;
+  padding: 40px;
+  margin: 0 120px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+  margin-bottom: 80px;
+  vertical-align: top;
+  margin-top: 40px;
+}
+.row .technology {
+  display: inline-block;
+  vertical-align: top;
+  width: calc(25% - 20px);
+  margin: 0 10px;
+  text-align: center;
+}
+.row .technology h1 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: justify;
+  color: var(--three);
+}
+.row .technology img {
+  padding-top: 15px;
+}
+
+.section-reach-us {
+  background-color: #ffffff;
+}
+.section-reach-us h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 40px;
+  font-weight: 700;
+  font-size: 2.3rem;
+  color: var(--three);
+}
+
+.location {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f7f7f7;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 50px;
+}
+.location .location-card {
+  width: 45%;
+  background-color: #fff;
+  border: 2px solid var(--three);
+  border-radius: 5px;
+  padding: 20px;
+  height: 400px;
+  margin-bottom: 20px;
+}
+.location .location-card h1 {
+  font-weight: 600;
+  font-size: 2rem;
+  color: var(--two);
+}
+.location .location-card hr {
+  border-color: #ccc;
+  margin: 15px 0;
+}
+.location .location-card p {
+  font-weight: 500;
+  padding-left: 35px;
+}
+.location .google-map {
+  margin-top: 50px;
 }/*# sourceMappingURL=styles.css.map */
