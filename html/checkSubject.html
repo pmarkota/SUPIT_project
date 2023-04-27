@@ -12,81 +12,126 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        background-color: #f5f5f5;
+        font-family: "Quicksand", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .card {
+        margin: 50px auto;
+        max-width: 600px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        border-radius: 10px;
+        padding: 20px;
+      }
+
+      .card:hover {
+        box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .card-header {
+        background-color: #00adb5;
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 10px 10px 0 0;
+      }
+
+      .card-body p {
+        font-size: 18px;
+        margin-bottom: 10px;
+        line-height: 1.5;
+      }
+
+      .card-body ul {
+        padding-left: 20px;
+        margin-bottom: 20px;
+      }
+
+      .card-footer {
+        background-color: #222831;
+        color: #fff;
+        text-align: center;
+        border-radius: 0 0 10px 10px;
+        padding: 10px;
+      }
+
+      .card-footer a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        border: 2px solid #fff;
+        padding: 10px;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+      }
+
+      .card-footer a:hover {
+        background-color: #fff;
+        color: #222831;
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      $.ajax({
+        url:
+          "https://www.fulek.com/data/api/supit/get-curriculum/" +
+          localStorage.getItem("selIte"),
+        headers: {
+          Authorization: "Bearer " + sessionStorage.getItem("token"),
+        },
+        type: "GET",
+        dataType: "json",
+        success: function (json) {
+          console.log(json);
+          var html = "";
+          html += "<p><strong>Course:</strong> " + json.data.kolegij + "</p>";
+          html += "<p><strong>ID:</strong> " + json.data.id + "</p>";
+          html += "<p><strong>ECTS:</strong> " + json.data.ects + "</p>";
+          html += "<p><strong>Hours:</strong> " + json.data.sati + "</p>";
+          html += "<ul>";
+          html +=
+            "<li><strong>Lectures:</strong> " + json.data.predavanja + "</li>";
+          html +=
+            "<li><strong>Exercises:</strong> " + json.data.vjezbe + "</li>";
+          html += "</ul>";
+          html += "<p><strong>Type:</strong> " + json.data.tip + "</p>";
+          html +=
+            "<p><strong>Semester:</strong> " + json.data.semestar + "</p>";
+          $(".card-body").html(html);
+        },
+        error: function (error) {
+          console.error(error);
+        },
+      });
+    </script>
   </head>
   <body>
-    <div class="container-fluid py-5 bg-light">
-      <div class="row">
-        <div class="col-md-6 offset-md-3">
-          <div class="card border-0 shadow-lg">
-            <div class="row">
-              <div class="col-md-4 bg-primary text-light">
-                <div class="card border-0 bg-primary text-light h-100">
-                  <div
-                    class="card-body d-flex align-items-center justify-content-center"
-                  >
-                    <h1 class="display-4 mb-0">A</h1>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-8">
-                <div class="card border-0">
-                  <div class="card-body p-5">
-                    <h5 class="card-title">Course A</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">ID: 1</h6>
-                    <p class="card-text">
-                      <strong>Property 1:</strong> Value 1
-                    </p>
-                    <p class="card-text">
-                      <strong>Property 2:</strong> Value 2
-                    </p>
-                    <p class="card-text">
-                      <strong>Property 3:</strong> Value 3
-                    </p>
-                    <p class="card-text">
-                      <strong>Property 4:</strong> Value 4
-                    </p>
-                    <a href="#" class="btn btn-primary btn-lg mt-3"
-                      >Enroll Now</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div class="container">
+      <div class="card">
+        <div class="card-header">Course Details</div>
+        <div class="card-body">
+          <p><strong>Course:</strong> Introduction to Web Development</p>
+          <p><strong>ID:</strong> 5</p>
+          <p><strong>ECTS:</strong> 6</p>
+          <p><strong>Hours:</strong> 60</p>
+          <ul>
+            <li><strong>Lectures:</strong> 30</li>
+            <li><strong>Exercises:</strong> 30</li>
+          </ul>
+          <p><strong>Type:</strong> Obligatory</p>
+          <p><strong>Semester:</strong> 2</p>
+        </div>
+        <div class="card-footer">
+          <a href="curriculum.html" class="btn btn-primary">Go Back</a>
         </div>
       </div>
     </div>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-      integrity="sha512-H+K7VBAVeGffvJ8KcW2T2T7gBoTGr+vSvX9JHk+G/xpVXYpF4w4sJqA/CP2QOyAX/AGaUGv1X/hc+ZM0VZzcw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"
-      integrity="sha512-tgUPxugQ2X8kGhYfYn7Kj5ngn6Gp5/x04ZZj6UJy6d+HrC3lGGKjQg"
-    ></script>
-
-    <script>
-      fetch(
-        "https://www.fulek.com/data/api/supit/get-curriculum/" +
-          localStorage.getItem("selIte"),
-        {
-          headers: {
-            Authorization: "Bearer " + sessionStorage.getItem("token"),
-          },
-        }
-      )
-        .then((resp) => resp.json())
-        .then((json) => checkOut(json))
-        .catch((error) => console.error(error));
-
-      function checkOut(item) {
-        item = item.data;
-        alert(item.kolegij);
-      }
-    </script>
   </body>
 </html>
