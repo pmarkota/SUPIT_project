@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/styles.css" />
-    <title>Petar Markota</title>
+    <title>Home</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <!--TODO Attractive design-->
@@ -115,10 +115,20 @@
     </div>
 
     <div class="message-box"></div>
+    <div class="video-container">
+      <video autoplay muted loop id="myVideo">
+        <source src="/video/typingOnlaptop.mp4" type="video/mp4" />
+      </video>
+      <div class="overlay"></div>
+      <div class="content">
+        <h1>Welcome</h1>
+        <p id="typing-text"></p>
+      </div>
+    </div>
 
     <script src="/js/navbar.js"></script>
     <script src="/js/logsig.js"></script>
-    <script src="/js/curriculum.js"></script>
+    <script src="/js/typingScript.js"></script>
   </body>
 </html>
 
