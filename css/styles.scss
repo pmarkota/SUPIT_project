@@ -1026,3 +1026,149 @@ body {
     }
   }
 }
+//? Contact Form Styling
+.modal {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modal-content {
+    background-color: #eeeeee;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #00adb5;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      label {
+        margin-bottom: 10px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #393e46;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background-color: #393e46;
+        color: #eeeeee;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin-bottom: 20px;
+
+        &::placeholder {
+          color: #eeeeee;
+          opacity: 0.7;
+        }
+      }
+
+      select {
+        appearance: none;
+      }
+
+      .checkbox-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        input[type="checkbox"] {
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          width: 20px;
+          height: 20px;
+          border-radius: 5px;
+          border: 2px solid #eeeeee;
+          margin-right: 10px;
+          cursor: pointer;
+
+          &:checked + .checkmark:after {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: #00adb5;
+            border-radius: 3px;
+            margin: 3px;
+          }
+        }
+
+        .checkmark {
+          width: 26px;
+          height: 26px;
+          border-radius: 5px;
+          border: 2px solid #eeeeee;
+          position: relative;
+          cursor: pointer;
+
+          &:after {
+            content: "";
+            display: none;
+          }
+        }
+      }
+
+      .buttons-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        button {
+          padding: 10px 30px;
+          border: none;
+          border-radius: 5px;
+          font-size: 1rem;
+          font-weight: bold;
+          cursor: pointer;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .submit-button {
+          background-color: #00adb5;
+          color: #eeeeee;
+          margin-right: 10px;
+
+          &:hover {
+            background-color: #222831;
+          }
+        }
+
+        .cancel-button {
+          background-color: #393e46;
+          color: #eeeeee;
+
+          &:hover {
+            background-color: #222831;
+          }
+        }
+      }
+    }
+  }
+}

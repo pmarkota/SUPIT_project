@@ -78,14 +78,27 @@ function checkLoggedIn() {
   }
 }
 
-const contactButton = document.getElementById("contact-button");
-
-function ShowContactMenu() {
-  document.getElementById("contact-form-container").style.display =
-    document.getElementById("contact-form-container").style.display === "block"
-      ? "none"
-      : "block";
+function showContactForm() {
+  $(".modal").fadeIn();
 }
+
+function hideContactForm() {
+  $(".modal").fadeOut();
+}
+
+$(".nav-contact").on("click", function () {
+  showContactForm();
+});
+
+$(".cancel-button").on("click", function () {
+  hideContactForm();
+});
+
+$("#contact-form").on("submit", function (event) {
+  event.preventDefault();
+  window.location.href = "https://www.fulek.com/mvc/supit/project-contact-form";
+});
+
 $(window).scroll(function () {
   if ($(this).scrollTop() > $(".navbar").height()) {
     $("#sidebar").fadeIn();
