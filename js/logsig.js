@@ -210,7 +210,7 @@ $(document).ready(function () {
 
     // Remove the logout button from the navbar
     $("#logout-button").remove();
-
+    window.location.href = "/html/index.html";
     checkLoggedIn();
     // Add the login and register buttons back to the navbar
     $("#menu").append(
