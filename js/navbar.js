@@ -94,10 +94,10 @@ $(".cancel-button").on("click", function () {
   hideContactForm();
 });
 
-$("#contact-form").on("submit", function (event) {
-  event.preventDefault();
-  window.location.href = "https://www.fulek.com/mvc/supit/project-contact-form";
-});
+// $("#contact-form").on("submit", function (event) {
+//   event.preventDefault();
+//   //window.location.href = "https://www.fulek.com/mvc/supit/project-contact-form";
+// });
 
 $(window).scroll(function () {
   if ($(this).scrollTop() > $(".navbar").height()) {
