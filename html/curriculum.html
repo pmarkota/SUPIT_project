@@ -17,6 +17,7 @@
 
     <title>Curriculum</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" /> 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <style>
       #content {
         margin: 30px auto;
@@ -28,9 +29,134 @@
           font-size: 0.8rem;
         }
       }
+      main{
+    margin-top: 30px;
+    min-height: 70vh;
+    overflow: hidden;
+}
+
+.ui-autocomplete li{
+    color: black; 
+}
+
+#title{
+    width: 100%;
+    margin-top: 99px;
+    margin-bottom: 80px;
+}
+
+#title h1 {
+    font-family: 'Segoe UI';
+    text-align: center;
+    border-bottom: 3px solid orange;
+    padding: 20px;
+    width: 50%;
+    margin: auto;
+    font-weight: bold;
+    font-size: 1.7em;
+}
+
+#content{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 30px;
+    position: relative;
+    animation: leftAnimation 0.5s ease-in both;
+}
+
+label{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#content input[type="text"]{
+    width: 200%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+
+table{
+    width: 100%;
+}
+
+tr{
+    border-top: 1px solid #C9C9C9;
+}
+
+th, td{
+    text-align: center;
+    padding: 5px;
+}
+
+tfoot{
+    border-top: 4px solid black;
+    font-weight: bold;
+}
+
+th:first-of-type, th:last-of-type, td:first-of-type{
+    text-align: left;
+}
+
+tfoot tr td:first-of-type{
+    text-align: right;
+}
+
+tr:nth-child(even){
+    background-color: #E8E8E8;
+}
+
+
+/* FOOTER */
+
+#footer {
+    position: relative;
+    margin-top: 0px;
+    padding: 0;
+    background: url('../img/zaiskri-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+#footer img {
+    width: calc(100% + 5px);
+    max-height: 400px;
+    box-sizing: border-box;
+}
+
+.text-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-container h1 {
+    text-transform: uppercase;
+    font-size: 3em;
+    color: white;
+    margin-bottom: 10px;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.text-container h3 {
+    text-transform: uppercase;
+    font-size: 3em;
+    color: red;
+    margin-top: 10px;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
     </style>
   </head>
-  <body onload="load()">
+  <body>
     <nav class="navbar">
       <img
         src="/img/burger-menu.png"
@@ -147,7 +273,40 @@
       </tbody>
     </table> -->
 
+
+
     <div class="message-box"></div>
+
+    
+      <main>
+        <div id="title">
+            <h1>Nastavni plan</h1>
+        </div>
+        <div id="content">
+          <div>
+              <label for="odabirKolegija">Naziv kolegija:</label><br>
+              <input type="text" id="odabirKolegija" placeholder="Započnite unos naziva kolegija..." autocomplete="on" autofocus></input>
+          </div>
+          <div id="table">
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Kolegij</th>
+                          <th>ECTS</th>
+                          <th>Sati</th>
+                          <th>Predavanja</th>
+                          <th>Vježbe</th>
+                          <th>Tip</th>
+                          <th>Delete</th>
+                      </tr>
+                  </thead>
+                  <tbody></tbody>
+                  <tfoot></tfoot>
+              </table>
+          </div>
+
+        
+    </main>
 
     <script src="/js/navbar.js"></script>
     <script src="/js/logsig.js"></script>
@@ -155,40 +314,4 @@
   </body>
 </html>
 
-<script>
-  let div = document.getElementById("content");
-  function load() {
-    let data = null;
-    fetch("https://www.fulek.com/data/api/supit/curriculum-list/en", {
-      headers: { Authorization: "Bearer " + sessionStorage.getItem("token") },
-    })
-      .then((resp) => resp.json())
-      .then((json) => console.log(json))
-      .catch((error) => console.error(error));
-    console.log(data);
-  }
 
-  function log(data) {
-    console.log(data);
-    data = data.data;
-    console.log(data);
-    data.forEach((subject) => {
-      div.innerHTML += `<tr>
-          <td>${subject.id}</td>
-          <td>${subject.course}</td>
-          <td>${subject.ects}</td>
-          <td>${subject.hours}</td>
-          <td>${subject.lectures}</td>
-          <td>${subject.exercises}</td>
-          <td>${subject.type}</td>
-          <td>${subject.semester}</td>
-          <td><button class="btn btn-info" onclick="viewSubject(${subject.id})">Check out</button><button class="btn btn-danger" onclick="deleteSubject(${subject.id})">Delete</button></td>
-        </tr>`;
-    });
-  }
-
-  function viewSubject(id) {
-    localStorage.setItem("selIte", id);
-    window.location.href = "checkSubject.html";
-  }
-</script>
